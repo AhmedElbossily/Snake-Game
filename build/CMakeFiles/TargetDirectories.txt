@@ -1,0 +1,3 @@
+/media/elbossily/New Volume/cplusplus/Udacity/CppND-Capstone-Snake-Game/build/CMakeFiles/rebuild_cache.dir
+/media/elbossily/New Volume/cplusplus/Udacity/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir
+/media/elbossily/New Volume/cplusplus/Udacity/CppND-Capstone-Snake-Game/build/CMakeFiles/edit_cache.dir

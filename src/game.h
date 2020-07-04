@@ -6,10 +6,12 @@
 #include "controller.h"
 #include "renderer.h"
 #include "snake.h"
+#include "obstacle.h"
+
 
 class Game {
  public:
-  Game(std::size_t grid_width, std::size_t grid_height);
+  Game(std::size_t grid_width, std::size_t grid_height, Obstacle &obstacle);
   void Run(Controller const &controller, Renderer &renderer,
            std::size_t target_frame_duration);
   int GetScore() const;
@@ -18,6 +20,7 @@ class Game {
  private:
   Snake snake;
   SDL_Point food;
+  Obstacle obstacle;
 
   std::random_device dev;
   std::mt19937 engine;

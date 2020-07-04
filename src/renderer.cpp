@@ -4,11 +4,13 @@
 
 Renderer::Renderer(const std::size_t screen_width,
                    const std::size_t screen_height,
-                   const std::size_t grid_width, const std::size_t grid_height)
+                   const std::size_t grid_width, const std::size_t grid_height,Obstacle &obstacle)
     : screen_width(screen_width),
       screen_height(screen_height),
       grid_width(grid_width),
-      grid_height(grid_height) {
+      grid_height(grid_height),
+      obstacle(obstacle) {
+      
   // Initialize SDL
   if (SDL_Init(SDL_INIT_VIDEO) < 0) {
     std::cerr << "SDL could not initialize.\n";
@@ -46,6 +48,16 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
   // Clear screen
   SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
   SDL_RenderClear(sdl_renderer);
+
+  // Render obstecle 
+  SDL_SetRenderDrawColor(sdl_renderer, 0, 255, 0, 0);
+  //std::cout<<  obstacle.get_obstecle().size() <<std::endl;
+  for (size_t i = 0; i < obstacle.get_obstecle().size(); i++)
+  {
+    block.x = obstacle.get_obstecle()[i].x * block.w;
+    block.y = obstacle.get_obstecle()[i].y * block.h;
+    SDL_RenderFillRect(sdl_renderer, &block);
+  }
 
   // Render food
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
