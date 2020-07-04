@@ -1,6 +1,6 @@
-# CPPND: Capstone Snake Game Project
-
 ## Basic Build Instructions for Ubuntu 19.04
+
+<img src="/snake_game.gif"/>
 
 This program requires *SDL2, SDL2_image* and *SDL2_mixer* libraries. we can use the `apt-get` method to install them for Linux OS.
 
